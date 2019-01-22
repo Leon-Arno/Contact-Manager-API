@@ -1,18 +1,22 @@
 {
   "name": "contact-manager",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "debug": "DEBUG=contact-manager:* node --inspect ./bin/www",
+    "watch": "DEBUG=contact-manger:* nodemon --inspect ./bin/www"
   },
   "author": "Leon-Arno",
   "dependencies": {
-    "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
+    "mongoose": "^5.4.6",
     "morgan": "~1.9.0"
   },
   "devDependencies": {
-    "eslint": "^5.12.1"
+    "eslint": "^5.12.1",
+    "faker": "^4.1.0",
+    "nodemon": "^1.18.9"
   }
 }

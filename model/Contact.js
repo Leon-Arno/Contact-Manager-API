@@ -8,6 +8,12 @@ const trimmedString = options => ({
   ...options
 });
 
+const trimmedNumber = options => ({
+  type: Number,
+  trim: true,
+  ...options
+});
+
 const nameSchema = new Schema(
   {
     first_name: trimmedString({ required: true }),
@@ -18,7 +24,7 @@ const nameSchema = new Schema(
 
 const addressSchema = new Schema(
   {
-    home_address: trimmedString({ required: true }),
+    home_address: trimmedString({ required: false }),
     work_address: trimmedString()
   },
   { _id: false }
@@ -26,8 +32,8 @@ const addressSchema = new Schema(
 
 const phoneNumberSchema = new Schema(
   {
-    mobile_phone: trimmedString({ required: true }),
-    home_phone: trimmedString()
+    mobile_phone: trimmedNumber({ required: true }),
+    home_phone: trimmedNumber()
   },
   { _id: false }
 );

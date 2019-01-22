@@ -17,10 +17,4 @@ app.use(express.json());
 app.use('/', indexRouter);
 app.use('/contacts', contactsRouter);
 
-app.use((req, res, next) => {
-  const error = new Error('Not Found');
-  error.statusCode = 404;
-  next(error);
-});
-
 module.exports = app;

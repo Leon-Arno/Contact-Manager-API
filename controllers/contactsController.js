@@ -11,18 +11,18 @@ exports.addContact = async (req, res) => {
 };
 
 exports.getContact = async (req, res) => {
-  const contact = await contact.findById(req.params.id);
+  const contact = await Contact.findById(req.params.id);
   res.json(contact);
 };
 
 exports.updateContact = async (req, res) => {
-  const contact = await contact.findByIdAndUpdate(req.params.id, req.body, {
+  const contact = await Contact.findByIdAndUpdate(req.params.id, req.body, {
     new: true
   });
   res.json(contact);
 };
 
 exports.deleteContact = async (req, res) => {
-  const contact = await contact.findByIdAndDelete(req.params.id);
+  const contact = await Contact.findByIdAndDelete(req.params.id);
   res.json(contact);
 };
